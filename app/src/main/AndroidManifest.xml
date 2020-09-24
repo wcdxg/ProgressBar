@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.yuaihen.demo">
+    package="com.yuaihen.demo">
 
     <application
         android:name=".BaseApplication"
@@ -12,13 +12,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".更新进度条的两种方式.ProgressTestActivity"/>
+        <activity android:name=".更新进度条的两种方式.ProgressTestActivity" />
 
 
     </application>

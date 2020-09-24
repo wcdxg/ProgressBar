@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
+import com.yuaihen.demo.自定义进度条.CustomProgressView;
 import com.yuaihen.demo.自定义进度条.HorizontalProgressbarWithProgress;
 import com.yuaihen.demo.自定义进度条.RoundProgressBarWithProgress;
 
@@ -19,17 +20,18 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             int progress = mHProgress.getProgress();
             int roundProgress2 = mRoundProgress2.getProgress();
-            int roundProgress3 = mRoundProgress3.getProgress();
             mHProgress.setProgress(++progress);
             mRoundProgress2.setProgress(++roundProgress2);
-            mRoundProgress3.setProgress(++roundProgress3);
+            mRoundProgress3.setProgress(++roundProgress2);
+            mCustomProgressView.setProgress(++roundProgress2);
             if (progress >= 100) {
                 mHandler.removeMessages(MSG_UPDATE);
             }
 
-            mHandler.sendEmptyMessageDelayed(MSG_UPDATE, 100);
+            mHandler.sendEmptyMessageDelayed(MSG_UPDATE, 50);
         }
     };
+    private CustomProgressView mCustomProgressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mHProgress = findViewById(R.id.progress1);
         mRoundProgress2 = findViewById(R.id.progress2);
         mRoundProgress3 = findViewById(R.id.progress3);
+        mCustomProgressView = findViewById(R.id.customProgressView);
 
         mHandler.sendEmptyMessage(MSG_UPDATE);
     }
